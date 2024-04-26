@@ -1,0 +1,32 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/authorDB?createDatabaseIfNotExist=true</property>
+
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">rootPassword1</property>
+
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <!-- Manage the schema updating -->
+        <property name="hbm2ddl.auto">update</property>
+
+
+        <!--   Mapping entity file -->
+<!--        <mapping class="glab.model.User"/>-->
+<!--        <mapping class="glab.model.Department"/>-->
+        <mapping class="relationshipdemo.Author"/>
+        <mapping class="relationshipdemo.Book"/>
+        <mapping class="relationshipdemo.Biography"/>
+        <mapping class="relationshipdemo.Publisher"/>
+
+</session-factory>
+</hibernate-configuration>
